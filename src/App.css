@@ -1,38 +1,251 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background-color: rgb(30, 49, 66);
+  width: 35%;
+  margin: 40px auto;
+}
+.title {
+  color: brown;
   text-align: center;
+  font-size: 50px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#part1 {
+  padding: 2%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fa-long-arrow-alt-left {
+  font-size: 3rem;
+  color: rgb(31, 148, 113);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.fa-volume-up {
+  font-size: 3rem;
+  color: orangered;
+  float: right;
+}
+#part2 {
+  margin: 2% 1%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+.player {
+  color: rgb(17, 219, 105);
+  /* border: 1px solid white; */
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  font-size: 25px;
+  font-family: cursive;
+}
+.fa-times {
+  font-size: 80px;
+  color: orangered;
+  margin: 10px;
+  font-weight: 400;
+}
+#score {
+  /* border: 1px solid white; */
+  font-size: 70px;
+  display: inline-block;
+  width: 47%;
+  text-align: center;
+  color: azure;
+  /* margin-top: -40% */
+}
+#score span {
+  color: grey;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.fa-circle {
+  font-size: 80px;
+  color: rgb(17, 219, 105);
+  margin: 10px;
+  font-weight: 400;
+}
+#part3 {
+  display: table;
+  border-collapse: collapse;
+  border: 2px solid grey;
+  margin: 4% auto;
+  width: 70%;
+}
+/* .line{
+    margin: 0 2%;
+} */
+.grid-container {
+  display: grid;
+  grid-template-columns: 33.3% 33.3% auto;
+  /* background-color: #2196F3; */
+  /* padding: 10px; */
+}
+.grid-item {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  border: 2px solid grey;
+  padding: 20px;
+  font-size: 90px;
+
+  height: 70px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: cursive;
+}
+#part4 {
+  margin: 8% 5%;
+  width: 90%;
+}
+.button {
+  border-radius: 20px;
+  width: 100%;
+  padding-bottom: 5%;
+}
+.btn-reset {
+  background-color: rgb(31, 148, 113);
+  color: #242322;
+  border-radius: 20px;
+  width: 40%;
+  padding: 25px;
+  font-weight: 800;
+  font-size: 25px;
+}
+.btn-again {
+  background-color: orangered;
+  color: #242322;
+  border-radius: 20px;
+  width: 40%;
+  padding: 25px;
+  float: right;
+  font-weight: 800;
+  font-size: 25px;
+}
+
+.red {
+  color: orangered;
+}
+.green {
+  color: rgb(17, 219, 105);
+}
+
+.result {
+  font-size: 30px;
+  font-weight: 800;
   color: white;
+  text-align: center;
+  margin: 5% 0;
+  font-family: cursive;
+  padding-top: 10px;
+  height: 30px;
+}
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+/* Modal container */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+/* Modal content */
+.modal-content {
+  background-color: #fff;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Close button */
+.modal-content button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: brown;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Close button hover effect */
+.modal-content button:hover {
+  background-color: #555;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* media queries */
+/* large devices */
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 50%;
+    /* background-color: yellow; */
+  }
+  .grid-item {
+    height: 175px;
+  }
+  .btn-again {
+    height: 100px;
+    font-size: 20px;
+  }
+  .btn-reset {
+    height: 100px;
+    font-size: 20px;
+  }
+  #part4 {
+    margin: 8% 5%;
+  }
+}
+/* medium devices */
+@media screen and (max-width: 900px) {
+  .container {
+    width: 75%;
+    /* background-color: green; */
+  }
+  .grid-item {
+    height: 150px;
+  }
+  .btn-again {
+    height: 75px;
+    font-size: 15px;
+  }
+  .btn-reset {
+    height: 75px;
+    font-size: 15px;
+  }
+  #part4 {
+    margin: 6% 5%;
+  }
+}
+/* small devices */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    /* background-color: orange; */
+  }
+  .grid-item {
+    height: 100px;
+  }
+  .btn-again {
+    height: 50px;
+    font-size: 10px;
+  }
+  .btn-reset {
+    height: 50px;
+    font-size: 10px;
+  }
+  #part4 {
+    margin: 4% 5%;
   }
 }
