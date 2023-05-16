@@ -2,15 +2,20 @@
   margin: 0;
   padding: 0;
 }
+.full {
+  height: 30rem;
+  width: 125rem;
+  margin: 8rem;
+}
 .container {
   background-color: rgb(30, 49, 66);
   width: 35%;
-  margin: 40px auto;
+  margin: auto;
 }
 .title {
   color: brown;
   text-align: center;
-  font-size: 50px;
+  font-size: 80px;
 }
 #part1 {
   padding: 2%;
@@ -141,6 +146,12 @@
 .blink_me {
   animation: blinker 1s linear infinite;
 }
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
 /* Modal container */
 .modal {
   position: fixed;
@@ -156,7 +167,7 @@
 
 /* Modal content */
 .modal-content {
-  background-color: #fff;
+  background-color: burlywood;
   color: black;
   padding: 20px;
   border-radius: 8px;
@@ -179,12 +190,6 @@
 .modal-content button:hover {
   background-color: #555;
 }
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-
 /* media queries */
 /* large devices */
 @media screen and (max-width: 1200px) {

@@ -72,62 +72,64 @@ function App() {
 
   return (
     <>
-      <div className="container">
-        <h2 className="title">Tic Tac Toe</h2>
-        <div className="result">
-          {showWinnerModal && (
-            <div className="modal">
-              <div className="modal-content">
-                <h3>{`Player ${winner} is the final winner!`}</h3>
-                <button onClick={closeModal}>Close</button>
+      <div className="full">
+        <div className="container">
+          <h2 className="title">Tic Tac Toe</h2>
+          <div className="result">
+            {showWinnerModal && (
+              <div className="modal">
+                <div className="modal-content">
+                  <h3>{`Player ${winner} is the final winner!`}</h3>
+                  <button onClick={closeModal}>Close</button>
+                </div>
               </div>
+            )}
+            {winner !== "" ? "Player " + winner + " won the game" : ""}
+          </div>
+          <div id="part2">
+            <div id="player1" className="player">
+              <p>Player X</p>
+              <div className="red grid-item">X</div>
             </div>
-          )}
-          {winner !== "" ? "Player " + winner + " won the game" : ""}
-        </div>
-        <div id="part2">
-          <div id="player1" className="player">
-            <p>Player X</p>
-            <div className="red grid-item">X</div>
+            <div id="score">
+              <p>
+                {score.X}
+                <span>/</span>
+                {score.O}
+              </p>
+              <p></p>
+            </div>
+            <div id="player2" className="player">
+              <p>Player O</p>
+              <div className="green grid-item">O</div>
+            </div>
           </div>
-          <div id="score">
-            <p>
-              {score.X}
-              <span>/</span>
-              {score.O}
-            </p>
-            <p></p>
+          <div id="part3">
+            <div className="grid-container">
+              <Tile id="0" label={grid[0]} clickEvent={tileClick} />
+              <Tile id="1" label={grid[1]} clickEvent={tileClick} />
+              <Tile id="2" label={grid[2]} clickEvent={tileClick} />
+            </div>
+            <div className="grid-container">
+              <Tile id="3" label={grid[3]} clickEvent={tileClick} />
+              <Tile id="4" label={grid[4]} clickEvent={tileClick} />
+              <Tile id="5" label={grid[5]} clickEvent={tileClick} />
+            </div>
+            <div className="grid-container">
+              <Tile id="6" label={grid[6]} clickEvent={tileClick} />
+              <Tile id="7" label={grid[7]} clickEvent={tileClick} />
+              <Tile id="8" label={grid[8]} clickEvent={tileClick} />
+            </div>
           </div>
-          <div id="player2" className="player">
-            <p>Player O</p>
-            <div className="green grid-item">O</div>
-          </div>
-        </div>
-        <div id="part3">
-          <div className="grid-container">
-            <Tile id="0" label={grid[0]} clickEvent={tileClick} />
-            <Tile id="1" label={grid[1]} clickEvent={tileClick} />
-            <Tile id="2" label={grid[2]} clickEvent={tileClick} />
-          </div>
-          <div className="grid-container">
-            <Tile id="3" label={grid[3]} clickEvent={tileClick} />
-            <Tile id="4" label={grid[4]} clickEvent={tileClick} />
-            <Tile id="5" label={grid[5]} clickEvent={tileClick} />
-          </div>
-          <div className="grid-container">
-            <Tile id="6" label={grid[6]} clickEvent={tileClick} />
-            <Tile id="7" label={grid[7]} clickEvent={tileClick} />
-            <Tile id="8" label={grid[8]} clickEvent={tileClick} />
-          </div>
-        </div>
-        <div id="part4">
-          <div className="button">
-            <button className=" btn-reset" onClick={resetScore}>
-              RESET SCORE
-            </button>
-            <button className=" btn-again" onClick={playAgain}>
-              PLAY AGAIN
-            </button>
+          <div id="part4">
+            <div className="button">
+              <button className=" btn-reset" onClick={resetScore}>
+                RESET SCORE
+              </button>
+              <button className=" btn-again" onClick={playAgain}>
+                PLAY AGAIN
+              </button>
+            </div>
           </div>
         </div>
       </div>
