@@ -2,6 +2,8 @@ import "./App.css";
 import Tile from "./components/Tile";
 import { useState, useEffect } from "react";
 
+// if a player scores 3 first he wins the whole match and the game and score is restored.
+
 const winnerCombination = [
   [0, 1, 2],
   [3, 4, 5],
